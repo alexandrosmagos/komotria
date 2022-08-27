@@ -87,3 +87,17 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+.nav-pills .nav-link.active {
+    background-color: blueviolet;
+}
+
+footer {
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    z-index: 9998;
+    padding-top: 7px;
+}
+
