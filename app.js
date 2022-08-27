@@ -1,11 +1,16 @@
-require('dotenv').config();
+require("dotenv").config();
 const mongoose = require("mongoose");
-var express = require('express');
+var express = require("express");
+const morgan = require("morgan");
+const mainRoutes = require("./routes/main");
+const authRoutes = require("./routes/auth");
 var app = express();
 
 // set the view engine to ejs
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+
+app.use(express.json());
 
 
 // Connecting to the database
@@ -27,12 +32,10 @@ mongoose
 		process.exit(1);
 	});
 
+app.use(morgan("dev"));
+
+//Routes
+app.use(mainRoutes);
+app.use(authRoutes);
 
 
-let titleD = "Demos";
-let h1D = "Demos";
-
-// index page
-app.get('/', function(req, res) {
-  res.render('pages/index', {title: titleD, h1: h1D});
-});
