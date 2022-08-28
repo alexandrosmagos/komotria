@@ -92,6 +92,14 @@ main {
     background-color: blueviolet;
 }
 
+/*tmp TODO new button btn-violet*/
+.btn-primary, .btn-primary:focus{
+    background-color: blueviolet!important;
+    border-color: blueviolet;
+    color: white;
+}
+
+
 footer {
     position: fixed;
     height: 40px;
@@ -101,3 +109,14 @@ footer {
     padding-top: 7px;
 }
 
+.modal-header {
+    border-bottom: 1px solid rgba(121, 121, 121, 0.51);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(121, 121, 121, 0.51);
+}
+
+.cb-violet, #terms {
+    accent-color: #9b59b6!important;
+}
