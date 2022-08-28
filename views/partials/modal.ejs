@@ -1,0 +1,31 @@
+<div class="modal fade " id="basicModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white" style="z-index: 9999">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"><%= modalTitle %></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="usn" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usn" aria-describedby="usernameHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your data with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pss" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pss">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input cb-violet" id="terms">
+                        <label class="form-check-label" for="terms">Agree with Terms & Conditions</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"><%= modalTitle %></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

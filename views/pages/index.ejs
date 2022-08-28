@@ -8,13 +8,21 @@
     <link href="/css/komotria.css" rel="stylesheet" />
 
   </head>
+  <%- include('../partials/modal.ejs'); %>
   <body class="bg-dark">
-    <main>
+
+  <main>
       <!-- sidebar -->
       <%- include('../partials/sidebar.ejs'); %>
 
       <div class="container">
         <h1 class="text-light text-muted"><%= h1 %></h1>
+
+        <!-- tmp -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+          Launch demo modal
+        </button>
 
 
       </div>
