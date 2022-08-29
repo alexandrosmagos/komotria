@@ -10,6 +10,10 @@ router.get("/", function(req, res) {
 	res.render("pages/index", {title: titleD, h1: h1D, modalTitle:mdl});
 });
 
+router.get("/test", function(req, res) {
+	res.render("pages/test", {title: titleD, h1: h1D, modalTitle:mdl});
+});
+
 router.post("/api/sendMsg", function(req, res) {
 	sendMessage(req, res);
 });
