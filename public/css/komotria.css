@@ -92,11 +92,16 @@ main {
     background-color: blueviolet;
 }
 
-/*tmp TODO new button btn-violet*/
-.btn-primary, .btn-primary:focus{
-    background-color: blueviolet!important;
-    border-color: blueviolet;
-    color: white;
+.btn-violet, .btn-violet:active, .btn-violet:visited {
+    color: white !important;
+    background-color: blueviolet !important;
+    border-color: #8626e0 !important;
+}
+
+.btn-violet:hover{
+    color: white !important;
+    background-color: rgba(142, 59, 220, 0.68) !important;
+    border-color: blueviolet !important;
 }
 
 
