@@ -4,14 +4,12 @@ $(document).ready(function(){
 	//On register btn click
 	$('#registerBtn').click(function(){
 		$('#modalTitle').text("Register");
-		$('#modal_btn').text("Submit");
 		$('#check').show();
 		$('#basicModal').modal('show');
-
 	});
+	
 	$('#loginBtn').click(function(){
 		$('#modalTitle').text("Login");
-		$('#modal_btn').text("Submit");
 		$('#check').hide();
 		$('#basicModal').modal('show');
 	});
