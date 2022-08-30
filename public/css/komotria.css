@@ -126,3 +126,31 @@ footer {
     font-size: 1.5rem;
     color: gray;
 }
+
+.font-danger{
+    color: rgba(207, 102, 121) !important;
+}
+
+.alert-danger {
+    background-color: rgba(207, 102, 121, 0.8) !important;
+    color: white;
+    border-color: #141414;
+
+}
+
+
+.nav-link-top.active{
+    color: blueviolet !important;
+}
+.nav-link-top:hover{
+    color:  rgba(142, 59, 220, 0.68) !important;
+}
+.dropdown-item-top:hover{
+    background-color: blueviolet !important;
+}
+
+.nav-icon{
+    color:#fff;
+    font-size:24px;
+    padding-top: 2px
+}
