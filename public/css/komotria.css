@@ -101,7 +101,7 @@ main {
 .btn-violet:hover{
     color: white !important;
     background-color: rgba(142, 59, 220, 0.68) !important;
-    border-color: blueviolet !important;
+    border-color: rgba(142, 59, 220, 0.68) !important;
 }
 
 
@@ -120,4 +120,9 @@ footer {
 
 .modal-footer {
     border-top: 1px solid rgba(121, 121, 121, 0.51);
+}
+
+.side-toggle {
+    font-size: 1.5rem;
+    color: gray;
 }
