@@ -2,28 +2,29 @@
     <div class="modal-dialog">
         <div class="modal-content bg-dark text-white" style="z-index: 9999">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle"><%= modalTitle %></h5>
+                <h5 class="modal-title" id="modalTitle"></h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form id="modalForm">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="usn" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="usn" aria-describedby="usernameHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your data with anyone else.</div>
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username" aria-describedby="usernameHelp">
+                        <div id="usernameHelp" class="form-text">We'll never share your data with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="pss" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="pss">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password">
                     </div>
-                    <div class="mb-3 form-check">
+                    <div id="check" class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input cb-violet" id="terms">
                         <label class="form-check-label" for="terms">Agree with Terms & Conditions</label>
                     </div>
+					<div id="status" class="mb-3 form-check" hidden></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary"><%= modalTitle %></button>
+                    <button type="submit" id="modal_btn" class="btn btn-primary"></button>
                 </div>
             </form>
         </div>

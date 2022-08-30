@@ -20,14 +20,16 @@ module.exports.login = async (req, res, next) => {
 module.exports.signup = async (req, res, next) => {
 	try {
 		const usernameCheck = await User.findOne({ username: req.body.username });
-		if (usernameCheck)
+		if (usernameCheck) 
 			return res.json({ msg: "Username already exists", status: false });
-		const emailCheck = await User.findOne({ email: req.body.email });
-		if (emailCheck)
-			return res.json({ msg: "An account with that email already exists", status: false });
+		
+		// const emailCheck = await User.findOne({ email: req.body.email });
+		// if (emailCheck) {
+		// 	return res.json({ msg: "An account with that email already exists", status: false });
+		// }
 		const hashedPassword = await bcrypt.hash(req.body.password, 11);
 		const user = await User.create({
-			email: req.body.email,
+			// email: req.body.email,
 			username: req.body.username,
 			password: hashedPassword,
 		});
