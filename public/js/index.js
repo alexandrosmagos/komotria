@@ -1,3 +1,4 @@
+// const {alert} = require('./functions.js');
 $(document).ready(function(){
 	const form = $("form");
 
@@ -17,7 +18,7 @@ $(document).ready(function(){
 	//on form submit
 	form.on('submit', function(e){
 		e.preventDefault();
-
+		
 		const username = $('input[name="username"]').val();
 		const password = $('input[name="password"]').val();
 
@@ -36,15 +37,14 @@ $(document).ready(function(){
 				data: { username, password },
 				success: function(data){
 					console.log(data);
-					//clear form
+					if (data.status) {
+						alert("Account created successfully!", "success");
+					} else {
+						alert(data.msg, "danger");
+					}
 				},
 				error: function(err){
-					$('#status').removeAttr('hidden');
-					$('#status').html(`<div class="alert alert-danger" role="alert">${err.responseJSON.message}</div>`);
-					setTimeout(() => {
-						$('#status').html(``);
-						$('#status').attr('hidden', true);
-					}, 2000);
+					alert(err.responseJSON.message, "danger");
 				},
 				complete: function(){
 					//Remove the spinner
@@ -60,15 +60,15 @@ $(document).ready(function(){
 				data: { username, password },
 				success: function(data){
 					console.log(data);
+					if (data.status) {
+						alert("Logged in!", "success");
+					} else {
+						alert(data.msg, "danger");
+					}
 				},
 				//get json response if error
 				error: function(err){
-					$('#status').removeAttr('hidden');
-					$('#status').html(`<div class="alert alert-danger" role="alert">${err.responseJSON.message}</div>`);
-					setTimeout(() => {
-						$('#status').html(``);
-						$('#status').attr('hidden', true);
-					}, 2000);
+					alert(err.responseJSON.message, "danger");
 				},
 				complete: function(){
 					$('#modal_btn').html('Submit');
@@ -77,4 +77,22 @@ $(document).ready(function(){
 		}
 		
 	});
+	//Bootstrap alert
+	const alert = (message, type) => {
+		const wrapper = document.createElement('div');
+		//Left it with the hide button temporarily, will be discussed later
+		wrapper.innerHTML = [
+			`<div class="alert alert-${type} alert-dismissible" role="alert">`,
+			`   <div>${message}</div>`,
+			'   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+			'</div>'
+		].join('');
+
+		$('div.modal-body').append(wrapper);
+
+		setTimeout(() => {
+			wrapper.remove();
+		} , 3000);
+	};
 });
+
