@@ -154,3 +154,26 @@ footer {
     font-size:24px;
     padding-top: 2px
 }
+
+.hv-blue:hover {
+    border-color: royalblue !important;
+    background-color: royalblue !important;
+}
+
+.hv-lightblue:hover {
+    border-color: dodgerblue !important;
+    background-color: dodgerblue !important;
+}
+
+
+.hv-orange:hover {
+    border-color: orange !important;
+    background-color: orange !important
+}
+
+.hv-navblue:hover {
+    border-color: darkslateblue !important;
+    background-color: darkslateblue !important;
+}
+
+
