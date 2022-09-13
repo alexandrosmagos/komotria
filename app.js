@@ -1,20 +1,23 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-var express = require("express");
+require('dotenv').config();
+const express = require('express');
+const session = require('express-session');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const morgan = require("morgan");
-const mainRoutes = require("./routes/main");
-const authRoutes = require("./routes/auth");
-var app = express();
+const MongoStore = require('connect-mongo');
+const passport = require('passport');
+const app = express();
 
-// set the view engine to ejs
+// load passpord
+require('./passport');
+
+
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// Connecting to the database
+//mongoDB connection
 const port = process.env.API_PORT || 3000;
 mongoose
 	.connect(process.env.MONGO_URI, {
@@ -24,7 +27,7 @@ mongoose
 	.then(() => {
 		console.log("Successfully connected to database");
 		app.listen(port, () => {
-			console.log(`Server running on port ${port}`);
+			console.log(`on port: http://localhost:${port}`);
 		});
 	})
 	.catch((error) => {
@@ -33,10 +36,21 @@ mongoose
 		process.exit(1);
 	});
 
-app.use(morgan("dev"));
 
-//Routes
+// Sessions
+app.use(session({
+	secret: 'keyboard cat',
+	resave: false,
+	saveUninitialized: false,
+	store: MongoStore.create({mongoUrl: process.env.MONGO_URI, ttl: 60 * 60 * 24})
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+const mainRoutes = require("./routes/main");
+const authRoutes = require("./routes/auth");
 app.use(mainRoutes);
 app.use(authRoutes);
-
 

@@ -6,7 +6,12 @@ let h1D = "Demos";
 
 // index page
 router.get("/", function(req, res) {
-	res.render("pages/index", {title: titleD, h1: h1D});
+	if (req.isAuthenticated()) {
+		res.render("pages/index", {title: titleD, h1: h1D, user: req.user });
+	} else {
+		res.render("pages/index", {title: titleD, h1: h1D});
+	}
+	
 });
 
 router.get("/test", function(req, res) {

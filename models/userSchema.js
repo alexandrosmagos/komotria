@@ -1,34 +1,37 @@
 const mongoose = require("mongoose");
+const {usernameGen} = require("../utils/functions");
 
 const userSchema = new mongoose.Schema({
-	username: {
-		type: String,
-		required: true,
-		min: 4,
-		max: 20,
-		unique: true,
+	platform: {
+		provider: String,
+		id: String,
+		Required: true
 	},
 	email: {
+		type: String
+	},
+	username: {
 		type: String,
-		required: false,
+		min: 4,
+		max: 20,
+		default: usernameGen
 	},
 	password: {
 		type: String,
-		required: true,
-		min: 8,
+		min: 6
 	},
 	isAvatarImageSet: {
 		type: Boolean,
-		default: false,
+		default: false
 	},
 	avatarImage: {
 		type: String,
-		default: "",
+		default: ""
 	},
 	authLevel: {
 		type: String,
 		enum: ["admin", "moderator", "member", "anon"],
-		default: "anon",
+		default: "anon"
 	},
 });
 
