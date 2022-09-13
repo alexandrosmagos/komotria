@@ -3,13 +3,13 @@ $(document).ready(function(){
 
 	//On register btn click
 	$('#registerBtn').click(function(){
-		$('#modalTitle').text("Register");
+		$('#modal_btn').text("Register");
 		$('#check').show();
 		$('#basicModal').modal('show');
 	});
 	
 	$('#loginBtn').click(function(){
-		$('#modalTitle').text("Login");
+		$('#modal_btn').text("Login");
 		$('#check').hide();
 		$('#basicModal').modal('show');
 	});
@@ -18,11 +18,11 @@ $(document).ready(function(){
 	form.on('submit', function(e){
 		e.preventDefault();
 
-		const username = $('input[name="username"]').val();
+		const email = $('input[name="email"]').val();
 		const password = $('input[name="password"]').val();
 
 		//if form title is "Register" 
-		if($('#modalTitle').text() == "Register"){
+		if($('#modal_btn').text() == "Register"){
 			//Check if user accepted terms
 			if(!$('#check input').is(':checked')){
 				$('#check input').focus();
@@ -31,9 +31,9 @@ $(document).ready(function(){
 			//Change button to loading spinner
 			$('#modal_btn').html('<i class="fa-solid fa-spinner fa-spin"></i>');
 			$.ajax({
-				url: '/api/signup',
+				url: '/register',
 				type: 'POST',
-				data: { username, password },
+				data: { email, password },
 				success: function(data){
 					console.log(data);
 					//clear form
@@ -52,12 +52,12 @@ $(document).ready(function(){
 				}
 			});
 
-		} else if($('#modalTitle').text() == "Login") {
+		} else if($('#modal_btn').text() == "Login") {
 			$('#modal_btn').html('<i class="fa-solid fa-spinner fa-spin"></i>');
 			$.ajax({
-				url: '/api/login',
+				url: '/login',
 				type: 'POST',
-				data: { username, password },
+				data: { email, password },
 				success: function(data){
 					console.log(data);
 				},

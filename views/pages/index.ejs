@@ -24,8 +24,10 @@
 
         <!-- tmp -->
         <!-- Button trigger modal -->
+		<% if (!locals.user) { %>
         <button type="button" id="registerBtn" class="btn btn-violet">Register</button>
 		<button type="button" id="loginBtn" class="btn btn-violet">Login</button>
+		<% } %>
 
       </div>
     </main>

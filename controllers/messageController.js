@@ -1,4 +1,4 @@
-const Messages = require("../models/messageModel");
+const Messages = require("../models/messageSchema");
 
 module.exports.getRoomMessages = async (req, res, next) => {
 	try {
