@@ -93,8 +93,7 @@ body {
 .line-container {
   overflow: hidden;
   border-radius: 6px;
-  max-height: 0px;
-  opacity: 0;
+  max-height: 0;
   transform: translateX(-300px) scale(0.2);
   transition: margin-bottom 200ms, max-height 500ms, opacity 100ms, transform 250ms;
   transition-timing-function: ease-out;
@@ -105,7 +104,6 @@ body {
 
 .line {
   padding: 10px;
-  background-color: #242424;
 }
 .line > div {
   display: inline-block;
@@ -124,28 +122,16 @@ body {
 .body .name,
 .body .text {
   border-radius: 2px;
-  background-color: #474747;
   height: 16px;
 }
 
 .name {
+  white-space: normal!important;
   width: 100px;
   margin-bottom: 10px;
   position: relative;
   cursor: pointer;
 }
-.name:after {
-  content: "";
-  display: block;
-  border-radius: 2px;
-  background-color: rgba(56, 56, 56, 0.4);
-  height: 16px;
-  width: 50px;
-  position: absolute;
-  right: -60px;
-  transition: 100ms;
-}
-
 .profile-img:hover + .body .name:after,
 .name:hover:after {
   background-color: #383838;
@@ -197,7 +183,5 @@ body {
 .text,
 .img,
 .rich-body {
-  opacity: 0;
-  transform: translateY(20px);
   transition: 200ms;
 }
