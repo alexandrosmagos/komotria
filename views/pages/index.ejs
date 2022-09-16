@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/b98ba90590.js" crossorigin="anonymous"></script>
 	<link href="/css/komotria.css" rel="stylesheet" />
+      <link href="/css/test.css" rel="stylesheet" />
+
 
   </head>
   <%- include('../partials/modal.ejs'); %>
@@ -28,6 +30,25 @@
         <button type="button" id="registerBtn" class="btn btn-violet">Register</button>
 		<button type="button" id="loginBtn" class="btn btn-violet">Login</button>
 		<% } %>
+          <br>
+              <div id="chat-container">
+                  <div id="chat-input">
+                      <div id="file-input"></div>
+                  </div>
+                  <div class="chat"> <!-- first div -->
+                      <div class="line-container" style="max-height: 50%; transform: translateX(0px) scale(1);"> <!-- container-->
+                          <div class="line bg-black"> <!-- inside box-->
+                              <img class="profile-img" src="/img/ios-icon.png" alt="Avatar">
+                              <div class="row p-0">
+                                  <div class="px-1">
+                                  <div class="text-muted">Magos Alexandros</div>
+                                  <p class="bg-dark rounded text-light border-dark text-p p-1">lfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdaw</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
       </div>
     </main>
@@ -40,5 +61,7 @@
 	<script src="https://kit.fontawesome.com/b98ba90590.js" crossorigin="anonymous"></script>
 	<script src="/js/sidebar.js"></script>
 	<script src="/js/index.js"></script>
+    <script src="/js/test.js"></script>
+
   </body>
 </html>

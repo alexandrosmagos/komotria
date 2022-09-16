@@ -175,5 +175,12 @@ footer {
     border-color: darkslateblue !important;
     background-color: darkslateblue !important;
 }
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
-
+.text-p {
+    max-width: 400px;
+    word-wrap: anywhere;
+}
