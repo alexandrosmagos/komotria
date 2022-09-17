@@ -8,8 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/b98ba90590.js" crossorigin="anonymous"></script>
 	<link href="/css/komotria.css" rel="stylesheet" />
-      <link href="/css/test.css" rel="stylesheet" />
-
 
   </head>
   <%- include('../partials/modal.ejs'); %>
@@ -21,7 +19,7 @@
       <!-- sidebar -->
       <%- include('../partials/sidebar.ejs'); %>
 
-      <div class="container">
+      <div class="container scroller">
         <h1 class="text-light text-muted"><%= h1 %></h1>
 
         <!-- tmp -->
@@ -37,9 +35,10 @@
 				<div id="file-input"></div>
 			</div>
 
+            <br>
 			<% chats.forEach(chat=> { %>
-				<%- include('../partials/chat-card.ejs', {username: chat.username, text: chat.text}); %>
-			<% }); %>
+				<%- include('../partials/card.ejs', {username: chat.username, text: chat.text}); %>
+  			<% }); %>
 
 		</div>
 

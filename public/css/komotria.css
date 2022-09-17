@@ -1,5 +1,28 @@
+/*
+##########################################################
+#                     Scroll bar                         #
+##########################################################
+*/
+.container.scroller { /* Firefox support */
+    margin-right: 0;
+    overflow: scroll;
+    scrollbar-color: blueviolet rgba(0, 0, 0, .85);
+    scrollbar-width: thin;
+
+}
+
+
+.scroller::-webkit-scrollbar { /* All other browsers support */
+    background-color: rgba(0, 0, 0, .85)!important;
+    width: 8px;
+}
+/*
+##########################################################
+*/
+
 body {
     min-height: 100%!important;
+    overflow: hidden;
 }
 
 html {
@@ -183,4 +206,16 @@ img {
 .text-p {
     max-width: 400px;
     word-wrap: anywhere;
+}
+
+.card {
+    border: 3px solid transparent;
+}
+
+.card:hover {
+    border-color:blueviolet;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
 }
