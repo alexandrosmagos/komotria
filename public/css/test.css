@@ -15,7 +15,7 @@ body {
 
 #chat-input {
   position: fixed;
-  bottom: 10px;
+  bottom: 46px;
   height: 40px;
   width: 500px;
   background-color: #242424;
@@ -85,7 +85,7 @@ body {
 
 .chat {
   position: fixed;
-  bottom: 60px;
+  bottom: 95px;
   width: 500px;
   display: inline-block;
 }
