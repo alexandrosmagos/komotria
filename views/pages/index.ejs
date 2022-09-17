@@ -30,25 +30,18 @@
         <button type="button" id="registerBtn" class="btn btn-violet">Register</button>
 		<button type="button" id="loginBtn" class="btn btn-violet">Login</button>
 		<% } %>
-          <br>
-              <div id="chat-container">
-                  <div id="chat-input">
-                      <div id="file-input"></div>
-                  </div>
-                  <div class="chat"> <!-- first div -->
-                      <div class="line-container" style="max-height: 50%; transform: translateX(0px) scale(1);"> <!-- container-->
-                          <div class="line bg-black"> <!-- inside box-->
-                              <img class="profile-img" src="/img/ios-icon.png" alt="Avatar">
-                              <div class="row p-0">
-                                  <div class="px-1">
-                                  <div class="text-muted">Magos Alexandros</div>
-                                  <p class="bg-dark rounded text-light border-dark text-p p-1">lfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdawlfklseslefwklawndlawldnawldnkanldnklawdnakdnklnldanldnlaknldanldnlaknldladklnalnkdaw</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+		<br>
+
+		<div id="chat-container">
+			<div id="chat-input">
+				<div id="file-input"></div>
+			</div>
+
+			<% chats.forEach(chat=> { %>
+				<%- include('../partials/chat-card.ejs', {username: chat.username, text: chat.text}); %>
+			<% }); %>
+
+		</div>
 
       </div>
     </main>
@@ -61,7 +54,6 @@
 	<script src="https://kit.fontawesome.com/b98ba90590.js" crossorigin="anonymous"></script>
 	<script src="/js/sidebar.js"></script>
 	<script src="/js/index.js"></script>
-    <script src="/js/test.js"></script>
 
   </body>
 </html>
