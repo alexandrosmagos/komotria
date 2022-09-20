@@ -1,0 +1,101 @@
+<!-- Create a basic boostrap 5.2 template, with two cards. One card for adding rooms containing a type selector, a Title and description text inputs, and a second card for adding messages -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Index</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/b98ba90590.js" crossorigin="anonymous"></script>
+		<script src="/js/manage.js" defer></script>
+		<!-- <link href="/css/komotria.css" rel="stylesheet" /> -->
+	  </head>
+
+	<body class="bg-dark">
+		<% if (!locals.user) { %>
+			<h4>Authenticate first.</h4>
+			<% } else {%>
+			<br>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Index</h1>
+					<p>Index page</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<h2>Rooms</h2>
+					<p>Rooms page</p>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<!-- Card with a room list, and delete button -->
+						<div class="card">
+							<div class="card-header">
+								Rooms
+							</div>
+							<ul class="list-group list-group-flush text-bg-dark">
+								<!-- for each room -->
+								<% for (let room of rooms) {%>
+									<!-- <form action="/api/room/<%= room._id %>" method="DELETE"> -->
+									<li id="<%= room._id %>" class="list-group-item d-flex justify-content-between align-items-start ">
+										<div class="ms-2 me-auto">
+										  <div class="fw-bold"><%= room.title %></div>
+										  <%= room.description %>
+										</div>
+										<button onclick="deleteSomething(`<%= room._id %>`)" class="badge bg-danger rounded-pill">x</span>
+									</li>
+								<!-- </form> -->
+								<% } %>
+							</ul>
+							<!-- <div class="card-footer">
+								<button type="button" class="btn btn-danger">Delete</button>
+							</div> -->
+						</div>
+
+					</div>
+					<div class="col">
+						<!-- card to create new rooms, containing Type Selector, and inputs for title, description -->
+						<div class="card">
+							<div class="card-header">
+								Create Room
+							</div>
+							<div class="card-body">
+								<form action="/api/room" method="post">
+									<div class="mb-3">
+										<label for="roomType" class="form-label">Room Type</label>
+										<select class="form-select" name="type" aria-label="Default select example">
+											<option value="Country">Country</option>
+											<option value="Custom">Custom</option>
+										</select>
+									</div>
+									<div class="mb-3">
+										<label for="roomTitle" class="form-label">Room Title</label>
+										<input type="text" class="form-control" name="title" placeholder="Room Title">
+									</div>
+									<div class="mb-3">
+										<label for="roomDescription" class="form-label">Room Description</label>
+										<input type="text" class="form-control" name="description" placeholder="Room Description">
+									</div>
+									<div class="mb-3">
+										<label for="roomImage" class="form-label">Room Image URL</label>
+										<input type="text" class="form-control" name="roomImage" placeholder="Room Image">
+									</div>
+									<input type="hidden" name="createdBy" value="<%= user._id %>">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</form>
+							</div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<h2>Messages</h2>
+					<p>Messages page</p>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</body>
+</html>
