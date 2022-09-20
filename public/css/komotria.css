@@ -219,3 +219,7 @@ img {
 .scroller::-webkit-scrollbar-thumb {
     background-color: blueviolet;
 }
+
+.card-img-top-op:hover {
+ opacity: 85%!important;
+}

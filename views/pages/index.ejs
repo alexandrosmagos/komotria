@@ -29,14 +29,17 @@
 		<button type="button" id="loginBtn" class="btn btn-violet">Login</button>
 		<% } %>
 		<br>
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+                <% rooms.forEach(room=> { %>
+                    <% if (room.type == "Country") { %>
+                        <%- include('../partials/room_country.ejs', { country: room.title, id: room._id }); %>
+                    <% } else { %>
+                        <%- include('../partials/room_custom.ejs', { img: room.image, title: room.title, text: room.text, id: room._id }); %>
+                    <% } %>
+                <% }); %>
+          </div>
 
-		<% rooms.forEach(room=> { %>
-			<% if (room.type == "Country") { %>
-				<%- include('../partials/room_country.ejs', { country: room.title, id: room._id }); %>
-			<% } else { %>
-				<%- include('../partials/room_custom.ejs', { img: room.image, title: room.title, text: room.text, id: room._id }); %>
-			<% } %>
-		<% }); %>
+        <br>
 		
 
       </div>

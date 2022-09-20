@@ -1,11 +1,14 @@
-<div class="card mb-2" style="width: 18rem;">
-	<!-- If <%= img %> equals to "", use img/room.jpg -->
-	<img src="<%= img ? img : '/img/room.jpg' %>" class="card-img-top" alt="...">
-	<!-- <img src="<%= img || 'img/room.jpg' %>" class="card-img-top" alt="..."> -->
-	<!-- <img src="<%= img %>" class="card-img-top" alt="..."> -->
-	<div class="card-body">
-	  <h5 class="card-title"><%= title %></h5>
-	  <p class="card-text"><%= text %></p>
-	  <a href="/room/<%= id %>" class="btn btn-primary">Open</a>
+<div class="col">
+	<div class="card mb-2 bg-black h-100" style="width: 18rem;">
+		<a class="text-decoration-none text-light"  href="/room/<%= id %>">
+			<!-- If <%= img %> equals to "", use img/room.jpg -->
+			<img src="<%= img ? img : '/img/room.jpg' %>" class="card-img-top card-img-top-op opacity-75" alt="...">
+			<!-- <img src="<%= img || 'img/room.jpg' %>" class="card-img-top" alt="..."> -->
+			<!-- <img src="<%= img %>" class="card-img-top" alt="..."> -->
+			<div class="card-body">
+			  <h5 class="card-title"><%= title %></h5>
+			  <p class="card-text"><%= text %></p>
+			</div>
+		</a>
 	</div>
 </div>
