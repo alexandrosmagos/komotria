@@ -1,0 +1,11 @@
+<div class="card mb-2" style="width: 18rem;">
+	<!-- If <%= img %> equals to "", use img/room.jpg -->
+	<img src="<%= img ? img : '/img/room.jpg' %>" class="card-img-top" alt="...">
+	<!-- <img src="<%= img || 'img/room.jpg' %>" class="card-img-top" alt="..."> -->
+	<!-- <img src="<%= img %>" class="card-img-top" alt="..."> -->
+	<div class="card-body">
+	  <h5 class="card-title"><%= title %></h5>
+	  <p class="card-text"><%= text %></p>
+	  <a href="/room/<%= id %>" class="btn btn-primary">Open</a>
+	</div>
+</div>

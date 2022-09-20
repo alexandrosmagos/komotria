@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
 const roomSchema = new mongoose.Schema({
-	name: {
+	type: {
+		type: String,
+		enum: ["Country", "Custom"],
+		required: true,
+	},
+	title: {
 		type: String,
 		required: true,
 		min: 1,
@@ -27,6 +32,9 @@ const roomSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "Messages",
 	}],
+	image: {
+		type: String,
+	},
 });
 
-module.exports = mongoose.model("Rooms", roomSchema);
+module.exports = mongoose.model("Room", roomSchema);
